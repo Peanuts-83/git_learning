@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gitlearning-5e584": {
+      "hosting": {
+        "git-learning": [
+          "gitlearning-5e584"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gitlearning-5e584"
+  }
+}
