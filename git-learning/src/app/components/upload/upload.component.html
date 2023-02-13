@@ -1,0 +1,19 @@
+<div class="module">
+  <h1>{{title | titlecase}}</h1>
+  <label for="loadedFile" class="label">Source</label>
+  <input class="list-font" type="file" id="loadedFile" #loadedFile accept=".mp4,.mov,.ogg" (change)="onSelectFile($event)" [ngClass]="selectedFile !== null ? 'valid':'invalid'">
+  <label for="destination" class="label">Destination</label>
+  <select name="destination" id="destination" (change)="onSelectDest($event)" [ngClass]="destinationFolder$.value !== '' ? 'valid':'invalid'">
+    <option value="">Destination folder</option>
+    <ng-container *ngFor="let folder of foldersDest">
+      <option value="{{folder.path}}">{{folder.key}}</option>
+    </ng-container>
+  </select>
+  <button (click)="onSaveFile()" [disabled]="selectedFile === null || destinationFolder$.value === ''">{{addText}}</button>
+  <app-progress-bar (onStop)="emptySelectedFile()"></app-progress-bar>
+  <hr>
+  <button *ngIf="fileNames.length" (click)="onDelete($event)">Delete all videos</button>
+  <div class="files" *ngFor="let file of fileNames">
+    <a (click)="onDelete($event, file)" class="file">{{file}}</a>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<nav>
+  <div class="logo-container">
+    <h1 class="logo big" routerLink="/home" title="home">Learning Zone</h1>
+    <h1 class="logo small" routerLink="/home" title="home">Lz</h1>
+  </div>
+  <div class="main-nav" >
+    <ng-container *ngFor="let entry of navEntries">
+      <a routerLink="/{{entry}}">{{entry}}</a>
+    </ng-container>
+  </div>
+  <div class="icon-container">
+    <span class="username">{{userName}}</span>
+    <a class="material-symbols-outlined icon" routerLink="/login" title="login">
+      person
+    </a>
+  </div>
+</nav>

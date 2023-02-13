@@ -1,0 +1,14 @@
+<div class="module">
+  <div class="intro">
+    Ce service donne accès à des vidéos de formation protégées par copyrights qui sont mises à disposition pour un public restreint.
+    Merci de ne pas diffuser ces documents en dehors de l'audience autorisée.
+  </div>
+  <div *ngIf="isLoggedIn === false" class="icon-container" routerLink="/login">
+    <span class="material-symbols-outlined icon">
+      person
+    </span>
+  </div>
+  <div *ngIf="isLoggedIn === false" class="login">
+    Vous devez vous authentifier avec votre adresse professionelle pour accéder au contenu.
+  </div>
+</div>

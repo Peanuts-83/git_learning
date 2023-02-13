@@ -1,18 +1,2 @@
-<div class="module">
-  <input type="file" name="loadedFile" #loadedFile (change)="onSelectFile($event)">
-  <div>
-    <pre>
-        {{selectedFile?.name | json}}
-      </pre>
-  </div>
-  <button (click)="onSaveFile()">Add data</button>
-</div>
-
-<div class="module">
-  <select name="removedFile" #removedFile (change)="onSelectFile($event)">
-    <option value="">Select an element to remove</option>
-    <option *ngFor="let fileName of fileNames | async"
-    [value]="fileName">{{fileName}}</option>
-  </select>
-  <button (click)="onRemoveFile()">delete</button>
-</div>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

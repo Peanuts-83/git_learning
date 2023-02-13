@@ -1,0 +1,15 @@
+<div class="module">
+  <div class="title">
+    <h1>{{title | titlecase}}</h1>
+    <select name="watch" (change)="onSelectFile($event)">
+      <option value="">Select a video</option>
+      <option *ngFor="let fileName of fileNames"
+      [value]="fileName">{{fileName}}</option>
+    </select>
+  </div>
+  <div class="video-container" contextmenu="return false;" oncontextmenu="return false;">
+    <video controls width="100%" *ngIf="activeMovieURL">
+      <source src="{{activeMovieURL}}" type="video/mp4" >
+    </video>
+  </div>
+</div>

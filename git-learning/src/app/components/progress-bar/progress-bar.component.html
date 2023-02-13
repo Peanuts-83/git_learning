@@ -1,0 +1,8 @@
+<div class="graphContainer">
+  <div class="value tech-font" [ngClass]="(percent$|async) ? 'show':'hide'">{{percent$ | async}}%</div>
+  <div class="bar" [ngClass]="(percent$|async) ? 'show':'hide'" [style]="{'width': (percent$ | async) + '%'}"></div>
+  <div class="buttons">
+    <button [ngClass]="(percent$|async) ? 'show':'hide'" (click)="pause()">{{(isPaused$|async) ? 'Resume' : 'Pause' }}</button>
+    <button [ngClass]="(percent$|async) ? 'show':'hide'" (click)="stop()">Cancel</button>
+  </div>
+</div>
