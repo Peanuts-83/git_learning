@@ -46,5 +46,5 @@ Thumbs.db
 *-debug.log
 .runtimeconfig.json
 
-# Webpack
-/14.2.10
+# Env
+/src/environments
